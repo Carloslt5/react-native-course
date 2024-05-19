@@ -32,6 +32,24 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="flex"
+        options={{
+          title: "Box Model Object",
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? "build" : "build-outline"} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="DimensionScreen"
+        options={{
+          title: "Dimension Screen",
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? "build" : "build-outline"} color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
