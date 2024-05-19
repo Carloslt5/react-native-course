@@ -1,4 +1,5 @@
 import { globalStyles } from "@/styles/global.styles";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React, { useState } from "react";
 import { Text, View } from "react-native";
 import { Button, FAB } from "react-native-paper";
@@ -9,7 +10,11 @@ export const CounterNumber = () => {
 
   return (
     <View style={globalStyles.container}>
-      <Text style={globalStyles.text}>{count}</Text>
+      <Text style={globalStyles.text}>
+        <MaterialCommunityIcons name="counter" size={50} color="black" />
+        {count}
+      </Text>
+
       <View style={globalStyles.buttonContainer}>
         {/* Custome styledButton */}
         <StyledButton
