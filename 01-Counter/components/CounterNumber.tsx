@@ -11,8 +11,9 @@ export const CounterNumber = () => {
         onPress={() => {
           setCount(count + 1);
         }}
-        onLongPress={() => setCount(0)}>
-        <Text>+1</Text>
+        onLongPress={() => setCount(0)}
+        style={({ pressed }) => [styles.button, pressed && styles.buttonPressed]}>
+        <Text style={styles.buttonText}>Increment</Text>
       </Pressable>
     </View>
   );
@@ -26,6 +27,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   text: {
-    fontSize: 50,
+    fontSize: 80,
+  },
+  button: {
+    backgroundColor: "#5956D6",
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 10,
+  },
+  buttonPressed: {
+    backgroundColor: "#3e3d91",
+  },
+  buttonText: {
+    color: "white",
   },
 });
