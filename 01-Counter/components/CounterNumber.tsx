@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import { StyledButton } from "./StyledButton";
 
 export const CounterNumber = () => {
   const [count, setCount] = useState(10);
@@ -7,14 +8,11 @@ export const CounterNumber = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{count}</Text>
-      <Pressable
-        onPress={() => {
-          setCount(count + 1);
-        }}
+      <StyledButton
+        label={"Increment"}
+        onPress={() => setCount(count + 1)}
         onLongPress={() => setCount(0)}
-        style={({ pressed }) => [styles.button, pressed && styles.buttonPressed]}>
-        <Text style={styles.buttonText}>Increment</Text>
-      </Pressable>
+      />
     </View>
   );
 };
@@ -28,17 +26,5 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 80,
-  },
-  button: {
-    backgroundColor: "#5956D6",
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 10,
-  },
-  buttonPressed: {
-    backgroundColor: "#3e3d91",
-  },
-  buttonText: {
-    color: "white",
   },
 });
