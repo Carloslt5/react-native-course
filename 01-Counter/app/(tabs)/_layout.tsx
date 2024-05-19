@@ -33,7 +33,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="flex"
+        name="BoxModel"
         options={{
           title: "Box Model Object",
           tabBarIcon: ({ color, focused }) => (
@@ -54,6 +54,15 @@ export default function TabLayout() {
         name="PositionScreen"
         options={{
           title: "Position Screen",
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? "build" : "build-outline"} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="FlexScreen"
+        options={{
+          title: "Flex Screen",
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? "build" : "build-outline"} color={color} />
           ),
