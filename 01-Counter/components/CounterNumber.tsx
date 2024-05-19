@@ -1,20 +1,24 @@
+import { globalStyles } from "@/styles/global.styles";
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { Button } from "react-native-paper";
+import { Text, View } from "react-native";
+import { Button, FAB } from "react-native-paper";
 import { StyledButton } from "./StyledButton";
 
 export const CounterNumber = () => {
   const [count, setCount] = useState(10);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>{count}</Text>
-      <View style={styles.buttonContainer}>
+    <View style={globalStyles.container}>
+      <Text style={globalStyles.text}>{count}</Text>
+      <View style={globalStyles.buttonContainer}>
+        {/* Custome styledButton */}
         <StyledButton
           label={"Increment (Styled Button)"}
           onPress={() => setCount(count + 1)}
           onLongPress={() => setCount(0)}
         />
+
+        {/* Custome button with React Native Paper */}
         <Button
           onPress={() => setCount(count + 1)}
           onLongPress={() => setCount(0)}
@@ -22,22 +26,15 @@ export const CounterNumber = () => {
           Increment (React-Native Paper UI)
         </Button>
       </View>
+
+      {/* Float Action Button with React Native Paper */}
+      <FAB
+        icon="plus"
+        label="Increment"
+        style={globalStyles.fab}
+        onPress={() => setCount(count + 1)}
+        onLongPress={() => setCount(0)}
+      />
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flexGrow: 1,
-    padding: 30,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  text: {
-    fontSize: 80,
-  },
-  buttonContainer: {
-    alignItems: "center",
-    gap: 6,
-  },
-});
