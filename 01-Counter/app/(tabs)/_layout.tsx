@@ -50,6 +50,15 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="PositionScreen"
+        options={{
+          title: "Position Screen",
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? "build" : "build-outline"} color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }

@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
     width: "50%",
     height: "80%",
   },
-
   purpleBox: {
     backgroundColor: "#376783",
     width: "90%",
