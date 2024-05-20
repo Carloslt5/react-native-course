@@ -7,6 +7,7 @@ type Props = {
   color?: string;
   dobleSize?: boolean;
   blackText?: boolean;
+  onPress: () => void;
 };
 
 export const CalculatorButton = ({
@@ -14,9 +15,11 @@ export const CalculatorButton = ({
   color = colors.darkGray,
   dobleSize = false,
   blackText = false,
+  onPress,
 }: Props) => {
   return (
     <Pressable
+      onPress={() => onPress()}
       style={({ pressed }) => ({
         ...globalStyles.button,
         width: dobleSize ? 180 : 80,
