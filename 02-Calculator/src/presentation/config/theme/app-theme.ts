@@ -36,17 +36,17 @@ export const globalStyles = StyleSheet.create({
   row: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "center",
-    paddingHorizontal: 10,
+    justifyContent: "space-between",
+    backgroundColor: "red",
   },
   button: {
     height: 80,
     width: 80,
     justifyContent: "center",
     alignContent: "center",
-    marginHorizontal: 10,
     backgroundColor: colors.darkGray,
     borderRadius: 100,
+    marginVertical: 5,
   },
   buttonText: {
     textAlign: "center",
